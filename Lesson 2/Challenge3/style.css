@@ -1,0 +1,26 @@
+/* Styles go here */
+
+body {
+  margin-left: 10px;
+}
+
+table {
+  border: 1px solid black;
+  box-sizing:border-box;
+}
+
+td {
+  border: 1px solid black;
+}
+
+.tableHeader {
+  background-color: orange;
+}
+
+.countryName {
+  background-color: yellow;
+}
+
+.populationGrowth {
+  background-color: green;
+}

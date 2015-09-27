@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+
+  <body ng-app="myApp">
+    <h1>Challenge One</h1>
+    <div ng-controller="myCtrl">
+      <div ng-repeat="month in months | orderBy: 'ordinal'">
+         <div ng-switch="month.season">
+           <div ng-switch-when="spring" class="spring">
+             <p>
+               {{ month.english}}
+               <br>
+               French word: {{ month.french}}
+               <br>
+               Number of days: {{ month.days}}
+             </p>
+           </div>
+           <div ng-switch-when="summer" class="summer">
+             <p>
+               {{ month.english}}
+               <br>
+               French word: {{ month.french}}
+               <br>
+               Number of days: {{ month.days}}
+             </p>
+           </div>
+           <div ng-switch-when="fall" class="fall">
+               <p>
+                 {{ month.english}}
+                 <br>
+                 French word: {{ month.french}}
+                 <br>
+                 Number of days: {{ month.days}}
+               </p>
+           </div>
+           <div ng-switch-when="winter" class="winter">
+               <p>
+                 {{ month.english}}
+                 <br>
+                 French word: {{ month.french}}
+                 <br>
+                 Number of days: {{ month.days}}
+               </p>
+           </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

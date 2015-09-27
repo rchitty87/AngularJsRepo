@@ -1,0 +1,21 @@
+/* Styles go here */
+
+body {
+  margin-left: 10px;
+}
+
+.winter {
+  background-color: white;
+}
+
+.spring {
+  background-color: green;
+}
+
+.summer {
+  background-color: orange;
+}
+
+.fall {
+  background-color: brown;
+}
