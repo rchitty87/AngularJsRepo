@@ -1,22 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-  </head>
-
-  <body ng-app="myApp">
-    <table>
-      <tr>
-        <td>
-        </td>
-      </tr>
-      <tr>
-        <td>
-        </td>
-      </tr>
-      
-    </table> 
+   <link rel="stylesheet" type="text/css" href="style.css">
+    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  
+  <body ng-app="">
+      <table id="madlibs-table">
+        <tr>
+          <td id="smileyface">
+            <img src="smileyface.png"/>
+          </td>
+          <td id="logo">
+            <img src="logo.png"/>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <h3>Provide the following words:</h3>            
+            <table id="word-table">
+              <tr>
+                <td>
+                  <input type="text" ng-model="female_name" ng-init="female_name='female name'">   
+                </td>
+                <td>
+                  <input type="text" ng-model="job_title" ng-init="job_title='job title'">
+                </td>
+                <td>
+                  <input type="text" ng-model="tedious_task" ng-init="tedious_task='tedious task'">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" ng-model="dirty_task" ng-init="dirty_task='dirty task'">
+                </td>
+                <td>
+                  <input type="text" ng-model="celebrity" ng-init="celebrity='celebrity'">
+                </td>
+                <td>
+                  <input type="text" ng-model="useless_skill" ng-init="useless_skill='useless skill'">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" ng-model="adjective" ng-init="adjective='adjective'">
+                </td>
+                <td>
+                  <input type="text" ng-model="obnoxious_celebrity" ng-init="obnoxious_celebrity='obnoxious celebrity'">
+                </td>
+                <td>
+                  <input type="text" ng-model="huge_number" ng-init="huge_number='huge number'">
+                </td>
+              </tr>
+            </table>          
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <p> 
+              <span class="word">{{female_name}}</span> was a <span class="word">{{job_title}}</span> who loved technology. Although she loved parts of her job, she absolutely hated  <span class="word">{{tedious_task}}</span> and 
+              <span class="word">{{dirty_task}}</span>. So, <span class="word">{{female_name}}</span> met with her life mentor <span class="word">{{celebrity}}</span> who told her to learn how to <span class="word">{{useless_skill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="word">{{useless_skill}}</span> so she studied programming instead. 
+            </p>
+            <p>
+              What a great decision! With her new skills, <span class="word">{{female_name}}</span> built a(n) <span class="word">{{adjective}}</span> robot named <span class="word">{{obnoxious_celebrity}}</span> that not only loved 
+              <span class="word">{{dirty_task}}</span> but did it <span class="word">{{huge_number}}</span> faster. 
+            </p>
+          </td>
+        </tr>      
+      </table>
   </body>
 </html>

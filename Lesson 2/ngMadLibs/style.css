@@ -1,1 +1,33 @@
-/* Styles go here */
+#madlibs-table
+{
+	width: 50em;
+	margin: 3em auto;
+	text-align: justify;
+	border-collapse:  collapse;
+}
+
+#madlibs-table td
+{
+	border: 1px solid black;
+}
+
+#word-table
+{
+	margin: 0 auto 1em;
+}
+
+#logo 
+{
+	width: 75%
+}
+
+#smileyface
+{
+	width: 25%;
+}
+
+.word
+{
+	min-width: 1em;
+	background-color: yellow;
+}
