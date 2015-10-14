@@ -2,9 +2,9 @@
 <html>
    <link rel="stylesheet" type="text/css" href="style.css">
     <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    <script src="script.js" type="text/javascript"></script>
-  <body ng-app="madLibsApp">
-      <table id="madlibs-table" ng-controller="mainCtrl">
+
+  <body ng-app="">
+      <table id="madlibs-table" ng-init="gender = 'male'">
         <tr>
           <td id="smileyface">
             <img src="smileyface.png"/>
@@ -15,11 +15,18 @@
         </tr>
         <tr>
           <td colspan="2">
+            <h3>Select a gender:</h3>
+            <label>
+                <input type="radio" name="gender" value="male" ng-model="gender">Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female" ng-model="gender">Female
+            </label>
             <h3>Provide the following words:</h3>
             <table id="word-table">
               <tr>
                 <td>
-                  <input type="text" ng-model="female_name" ng-init="female_name='female name'">
+                  <input type="text" ng-model="person_name" ng-init="person_name='person name'">
                 </td>
                 <td>
                   <input type="text" ng-model="job_title" ng-init="job_title='job title'">
@@ -56,11 +63,14 @@
         <tr>
           <td colspan="2">
             <p>
-              <span class="word">{{female_name}}</span> was a <span class="word">{{job_title}}</span> who loved technology. Although she loved parts of her job, she absolutely hated  <span class="word">{{tedious_task}}</span> and
-              <span class="word">{{dirty_task}}</span>. So, <span class="word">{{female_name}}</span> met with her life mentor <span class="word">{{celebrity}}</span> who told her to learn how to <span class="word">{{useless_skill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="word">{{useless_skill}}</span> so she studied programming instead.
+              <span class="word">{{person_name}}</span> was a <span class="word">{{job_title}}</span> who loved technology. Although <span ng-if="gender == 'male'">he</span><span ng-if="gender == 'female'">she</span> loved parts of
+              <span ng-if="gender == 'male'">his</span><span ng-if="gender == 'female'">her</span> job, <span ng-if="gender == 'male'">he</span><span ng-if="gender == 'female'">she</span> absolutely hated  <span class="word">{{tedious_task}}</span> and
+              <span class="word">{{dirty_task}}</span>. So, <span class="word">{{person_name}}</span> met with <span ng-if="gender == 'male'">his</span><span ng-if="gender == 'female'">her</span> life mentor <span class="word">{{celebrity}}</span> who told
+              <span ng-if="gender == 'male'">him</span><span ng-if="gender == 'female'">her</span> to learn how to <span class="word">{{useless_skill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="word">{{useless_skill}}</span> so
+              <span ng-if="gender == 'male'">he</span><span ng-if="gender == 'female'">she</span> studied programming instead.
             </p>
             <p>
-              What a great decision! With her new skills, <span class="word">{{female_name}}</span> built a(n) <span class="word">{{adjective}}</span> robot named <span class="word">{{obnoxious_celebrity}}</span> that not only loved
+              What a great decision! With <span ng-if="gender == 'male'">his</span><span ng-if="gender == 'female'">her</span> new skills, <span class="word">{{person_name}}</span> built a(n) <span class="word">{{adjective}}</span> robot named <span class="word">{{obnoxious_celebrity}}</span> that not only loved
               <span class="word">{{dirty_task}}</span> but did it <span class="word">{{huge_number}}</span> faster.
             </p>
           </td>
