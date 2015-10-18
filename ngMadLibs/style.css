@@ -31,3 +31,16 @@
 	min-width: 1em;
 	background-color: yellow;
 }
+
+.generateBtn
+{
+	float:right;
+	margin: 3em;
+}
+
+.errorSection
+{
+	text-align: center;
+	font-size: 1.2em;
+	color: red;
+}
