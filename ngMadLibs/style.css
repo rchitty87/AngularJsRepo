@@ -1,24 +1,30 @@
-#madlibs-table
+table
 {
-	width: 50em;
-	margin: 3em auto;
-	text-align: justify;
-	border-collapse:  collapse;
+	width:100%;
+	box-sizing: border-box;
 }
 
-#madlibs-table td
+table td
 {
+		border: 1px solid black;
+}
+
+.section
+{
+	padding: 30px !important;
+	margin-top: 30px;
 	border: 1px solid black;
 }
 
-#word-table
+.marginTop30
 {
-	margin: 0 auto 1em;
+		margin-top: 30px !important;
 }
 
 #logo
 {
-	width: 75%
+	width: 75%;
+	text-align: center;
 }
 
 #smileyface
@@ -32,15 +38,56 @@
 	background-color: yellow;
 }
 
-.generateBtn
-{
-	float:right;
-	margin: 3em;
-}
-
 .errorSection
 {
 	text-align: center;
 	font-size: 1.2em;
 	color: red;
+}
+
+.errorSection.ng-show
+{
+	opacity: 1;
+}
+
+.errorSection.ng-hide
+{
+	opacity: 0;
+}
+
+.errorSection.ng-hide-add, .errorSection.ng-hide-remove
+{
+		transition: all linear 1s;
+}
+
+.error.ng-show
+{
+  line-height: 20px;
+  opacity: 1;
+}
+
+.error.ng-hide
+{
+  line-height: 0;
+  opacity: 0;
+}
+
+.error.ng-hide-add, .error.ng-hide-remove
+{
+  transition: all linear 0.5s;
+}
+
+.section.ng-show
+{
+	opacity: 1;
+}
+
+.section.ng-hide
+{
+	opacity: 0;
+}
+
+.section.ng-hide-add, .section.ng-hide-remove
+{
+	transition: 1s cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
 }

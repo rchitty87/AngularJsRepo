@@ -1,10 +1,8 @@
-var app = angular.module('madLibsApp', []);
+var app = angular.module('madLibsApp', ['ngAnimate']);
 
 app.controller('mainCtrl', function($scope){
   $scope.gender = 'male';
-  $scope.submitted = false;
 
   $scope.submitForm = function(){
-    $scope.submitted = true;
   }
 });

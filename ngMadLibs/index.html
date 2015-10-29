@@ -1,97 +1,102 @@
 <!DOCTYPE html>
 <html>
-   <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css"><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js"></script>
     <script src="script.js"></script>
   <body ng-app="madLibsApp">
-    <div ng-controller="mainCtrl">
-      <table id="madlibs-table" >
-        <tr>
-          <td id="smileyface">
-            <img src="smileyface.png"/>
-          </td>
-          <td id="logo">
-            <img src="logo.png"/>
-          </td>
-        </tr>
-        <tr ng-show="!submitted || mlForm.$invalid">
-          <td colspan="2">
-            <form name="mlForm" ng-submit="submitForm()" novalidate>
-              <h3>Select a gender:</h3>
-              <label>
-                  <input type="radio" name="gender" value="male" ng-model="gender">Male
-              </label>
-              <label>
-                  <input type="radio" name="gender" value="female" ng-model="gender">Female
-              </label>
-              <h3>Provide the following words:</h3>
-              <table id="word-table">
-                <tr>
-                  <td>
-                    <input type="text" name="person_name" ng-model="person_name" placeholder="person name" required>
-                  </td>
-                  <td>
-                    <input type="text" name="job_title" ng-model="job_title" placeholder="job title" required>
-                  </td>
-                  <td>
-                    <input type="text" name="tedious_task" ng-model="tedious_task" placeholder="tedious task" required>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="text" name="dirty_task" ng-model="dirty_task" placeholder="dirty task" required>
-                  </td>
-                  <td>
-                    <input type="text" name="celebrity" ng-model="celebrity" placeholder="celebrity" required>
-                  </td>
-                  <td>
-                    <input type="text" name="useless_skill" ng-model="useless_skill" placeholder="useless skill" required>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="text" name="adjective" ng-model="adjective" placeholder="adjective" required>
-                  </td>
-                  <td>
-                    <input type="text" name="obnoxious_celebrity" ng-model="obnoxious_celebrity" placeholder="obnoxious celebrity" required>
-                  </td>
-                  <td>
-                    <input type="number" name="huge_number" ng-model="huge_number" placeholder="huge number" required>
-                  </td>
-                </tr>
-              </table>
-              <div class="errorSection" ng-show="submitted && mlForm.$invalid">
-                <div ng-show="mlForm.person_name.$error.required">Person name is required</div>
-                <div ng-show="mlForm.job_title.$error.required">Job title is required</div>
-                <div ng-show="mlForm.tedious_task.$error.required">Tedious task is required</div>
-                <div ng-show="mlForm.dirty_task.$error.required">Dirty task is required</div>
-                <div ng-show="mlForm.celebrity.$error.required">Celebrity is required</div>
-                <div ng-show="mlForm.celebrity.$error.required">Useless skill is required</div>
-                <div ng-show="mlForm.adjective.$error.required">Adjective is required</div>
-                <div ng-show="mlForm.obnoxious_celebrity.$error.required">Obnoxious celebrity is required</div>
-                <div ng-show="mlForm.huge_number.$error.required">Huge number is required</div>
-                <div ng-show="mlForm.huge_number.$error.number">Huge number is invalid</div>
-              </div>
-              <input type="submit" class="generateBtn" value="Generate My Mad Lib">
-            </form>
-          </td>
-        </tr>
-        <tr ng-show="submitted && mlForm.$valid">
-          <td colspan="2">
-            <p>
-              <span class="word">{{person_name}}</span> was a <span class="word">{{job_title}}</span> who loved technology. Although <span ng-if="gender == 'male'">he</span><span ng-if="gender == 'female'">she</span> loved parts of
-              <span ng-if="gender == 'male'">his</span><span ng-if="gender == 'female'">her</span> job, <span ng-if="gender == 'male'">he</span><span ng-if="gender == 'female'">she</span> absolutely hated  <span class="word">{{tedious_task}}</span> and
-              <span class="word">{{dirty_task}}</span>. So, <span class="word">{{person_name}}</span> met with <span ng-if="gender == 'male'">his</span><span ng-if="gender == 'female'">her</span> life mentor <span class="word">{{celebrity}}</span> who told
-              <span ng-if="gender == 'male'">him</span><span ng-if="gender == 'female'">her</span> to learn how to <span class="word">{{useless_skill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="word">{{useless_skill}}</span> so
-              <span ng-if="gender == 'male'">he</span><span ng-if="gender == 'female'">she</span> studied programming instead.
-            </p>
-            <p>
-              What a great decision! With <span ng-if="gender == 'male'">his</span><span ng-if="gender == 'female'">her</span> new skills, <span class="word">{{person_name}}</span> built a(n) <span class="word">{{adjective}}</span> robot named <span class="word">{{obnoxious_celebrity}}</span> that not only loved
-              <span class="word">{{dirty_task}}</span> but did it <span class="word">{{huge_number}}</span> faster.
-            </p>
-          </td>
-        </tr>
-      </table>
+    <div class="container" ng-controller="mainCtrl">
+      <div class="row">
+        <table>
+          <tr>
+            <td id="smileyface">
+              <img src="smileyface.png"/>
+            </td>
+            <td id="logo">
+              <img src="logo.png"/>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="section" ng-show="!mlForm.$submitted || mlForm.$invalid">
+        <form name="mlForm" ng-submit="submitForm()" novalidate>
+          <div class="row">
+            <h3>Select a gender:</h3>
+            <label>
+                <input type="radio" name="gender" value="male" ng-model="gender">Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female" ng-model="gender">Female
+            </label>
+          </div>
+          <div class="row">
+            <h3>Provide the following words:</h3>
+          </div>
+          <div class="row">
+            <span class="col-md-4">
+              <input type="text" name="person_name" ng-model="person_name" placeholder="person name" required>
+            </span>
+            <span class="col-md-4">
+              <input type="text" name="job_title" ng-model="job_title" placeholder="job title" required>
+            </span>
+            <span class="col-md-4">
+              <input type="text" name="tedious_task" ng-model="tedious_task" placeholder="tedious task" required>
+            </span>
+          </div>
+          <div class="row">
+            <span class="col-md-4">
+              <input type="text" name="dirty_task" ng-model="dirty_task" placeholder="dirty task" required>
+            </span>
+            <span class="col-md-4">
+              <input type="text" name="celebrity" ng-model="celebrity" placeholder="celebrity" required>
+            </span>
+            <span class="col-md-4">
+              <input type="text" name="useless_skill" ng-model="useless_skill" placeholder="useless skill" required>
+            </span>
+          </div>
+          <div class="row">
+            <span class="col-md-4">
+              <input type="text" name="adjective" ng-model="adjective" placeholder="adjective" required>
+            </span>
+            <span class="col-md-4">
+              <input type="text" name="obnoxious_celebrity" ng-model="obnoxious_celebrity" placeholder="obnoxious celebrity" required>
+            </span>
+            <span class="col-md-4">
+              <input type="number" name="huge_number" ng-model="huge_number" placeholder="huge number" required>
+            </span>
+          </div>
+          <div class="row errorSection" ng-show="mlForm.$submitted && mlForm.$invalid">
+            <div class="error" ng-show="mlForm.person_name.$error.required">Person name is required</div>
+            <div class="error" ng-show="mlForm.job_title.$error.required">Job title is required</div>
+            <div class="error" ng-show="mlForm.tedious_task.$error.required">Tedious task is required</div>
+            <div class="error" ng-show="mlForm.dirty_task.$error.required">Dirty task is required</div>
+            <div class="error" ng-show="mlForm.celebrity.$error.required">Celebrity is required</div>
+            <div class="error" ng-show="mlForm.celebrity.$error.required">Useless skill is required</div>
+            <div class="error" ng-show="mlForm.adjective.$error.required">Adjective is required</div>
+            <div class="error" ng-show="mlForm.obnoxious_celebrity.$error.required">Obnoxious celebrity is required</div>
+            <div class="error" ng-show="mlForm.huge_number.$error.required">Huge number is required</div>
+            <div class="error" ng-show="mlForm.huge_number.$error.number">Huge number is invalid</div>
+          </div>
+          <div class="row marginTop30">
+            <button type="submit" class="btn btn-success pull-right">Generate My Mad Lib</button></span>
+          </div>
+        </form>
+      </div>
+      <div class="section" ng-show="mlForm.$submitted && mlForm.$valid">
+        <p>
+          <span class="word">{{person_name}}</span> was a <span class="word">{{job_title}}</span> who loved technology. Although <span ng-if="gender == 'male'">he</span><span ng-if="gender == 'female'">she</span> loved parts of
+          <span ng-if="gender == 'male'">his</span><span ng-if="gender == 'female'">her</span> job, <span ng-if="gender == 'male'">he</span><span ng-if="gender == 'female'">she</span> absolutely hated  <span class="word">{{tedious_task}}</span> and
+          <span class="word">{{dirty_task}}</span>. So, <span class="word">{{person_name}}</span> met with <span ng-if="gender == 'male'">his</span><span ng-if="gender == 'female'">her</span> life mentor <span class="word">{{celebrity}}</span> who told
+          <span ng-if="gender == 'male'">him</span><span ng-if="gender == 'female'">her</span> to learn how to <span class="word">{{useless_skill}}</span> with Thinkful. Thinkful didn't offer a course on <span class="word">{{useless_skill}}</span> so
+          <span ng-if="gender == 'male'">he</span><span ng-if="gender == 'female'">she</span> studied programming instead.
+        </p>
+        <p>
+          What a great decision! With <span ng-if="gender == 'male'">his</span><span ng-if="gender == 'female'">her</span> new skills, <span class="word">{{person_name}}</span> built a(n) <span class="word">{{adjective}}</span> robot named <span class="word">{{obnoxious_celebrity}}</span> that not only loved
+          <span class="word">{{dirty_task}}</span> but did it <span class="word">{{huge_number}}</span> faster.
+        </p>
+      </div>
     </div>
   </body>
 </html>
