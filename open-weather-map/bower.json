@@ -1,0 +1,22 @@
+{
+  "name": "open-weather-map",
+  "homepage": "https://github.com/rchitty87/AngularJsRepo",
+  "authors": [
+    "Riduan Chitty <rchitty87@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7"
+  }
+}
