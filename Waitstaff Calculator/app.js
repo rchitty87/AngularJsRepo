@@ -1,4 +1,30 @@
-var app = angular.module("waitStaffCalculator", []);
+var app = angular.module("waitStaffCalculator", ['ngRoute', 'ngAnimate']);
+
+app.config(['$routeProvider', function($routeProvider){
+  $routeProvider.when('/', {
+    templateUrl: 'home.html'
+  }).when('/new-meal', {
+    templateUrl: 'new-meal.html'
+  }).when('/my-earnings', {
+    templateUrl: 'my-earnings.html'
+  }).otherwise('/');
+}]);
+
+app.run(function($rootScope, $location, $timeout) {
+  $rootScope.$on('$routeChangeError', function() {
+    $location.path('/');
+  });
+
+  $rootScope.$on('$routeChangeStart', function() {
+    $rootScope.isLoading = true;
+  });
+
+  $rootScope.$on('$routeChangeSuccess', function() {
+    $timeout(function() {
+      $rootScope.isLoading = false;
+    }, 1000);
+  })
+});
 
 app.controller("mainCtrl", function($scope) {
     $scope.initialMeal = { price: 0.0, taxPercentage: 0, tipPercentage: 0 };

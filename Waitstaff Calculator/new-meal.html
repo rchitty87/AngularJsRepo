@@ -1,0 +1,77 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Enter the Meal Details</h3>
+    </div>
+    <div class="panel-body">
+        <form ng-submit="submit()" name="mealDetails" class="form-horizontal" role="form">
+          <div class="row">
+              <label class="col-md-6 control-label">Base Meal Price</label>
+              <div class="col-md-3"></div>
+              <div class="col-md-3">
+                  <div class="input-group">
+                      <div class="input-group-addon">$</div>
+                      <input ng-model="meal.price" type="number" class="form-control" placeholder="0.00" min="0.00" step="0.1" data-number-to-fixed="2" required>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <label class="col-md-6 control-label">Tax Rate</label>
+              <div class="col-md-3"></div>
+              <div class="col-md-3">
+                  <div class="input-group">
+                      <div class="input-group-addon">%</div>
+                      <input ng-model="meal.taxPercentage" type="number" class="form-control" placeholder="0" min="0" required>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <label class="col-md-6 control-label">Tip Percentage</label>
+              <div class="col-md-3"></div>
+              <div class="col-md-3">
+                  <div class="input-group">
+                      <div class="input-group-addon">%</div>
+                      <input ng-model="meal.tipPercentage" type="number" class="form-control" placeholder="0" min="0" required>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <div class="btn-group">
+                      <button type="submit" class="btn btn-success">Submit</button>
+                      <a role="button" class="btn btn-danger" ng-click="cancel()">Cancel</a>
+                  </div>
+              </div>
+              <div class="col-md-4"></div>
+          </div>
+        </form>
+    </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Customer Charges</h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" role="form">
+          <div class="row">
+              <label class="col-sm-3 control-label">Subtotal</label>
+              <div class="col-sm-9">
+                  <p class="form-control-static">{{ customer.subtotal | currency:"$" }}</p>
+              </div>
+          </div>
+          <div class="row">
+              <label class="col-sm-3 control-label">Tip</label>
+              <div class="col-sm-9">
+                  <p class="form-control-static">{{ customer.tip | currency:"$" }}</p>
+              </div>
+          </div>
+          <hr/>
+          <div class="row">
+              <label class="col-sm-3 control-label">Total</label>
+              <div class="col-sm-9">
+                  <p class="form-control-static">{{ customer.total | currency:"$" }}</p>
+              </div>
+          </div>
+        </form>
+    </div>
+</div>
