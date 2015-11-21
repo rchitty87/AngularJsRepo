@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-animate.min.js"></script>
+
+  <script src="app.js"></script>
+  <link href="app.css" rel="stylesheet" type="text/css">
+
+  <title>Instagram Searcher</title>
+</head>
+<body ng-app="instaApp" class="ng-scope" ng-controller="mainCtrl">
+  <div ng-if="loadMsg" class="loading center-console"><img src="loading.gif"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-xs-3"></div>
+      <div class="col-md-4 col-xs-6 center-console">
+        <img src="ng-instagram.png">
+        <form ng-submit="submitSearch(data.search_text)" name="searchForm" novalidate>
+          <input type="text" name="inputText" ng-model="data.search_text" required>
+          <button type="submit" ng-disabled="searchForm.$invalid">Submit</button>
+        </form>
+        <span ng-show="loadMsg" class="tag-label">Searching Instagram for photos tagged with "{{data.search_text}}"</span>
+        <span ng-show="imageData.length>0" class="tag-label">We found {{imageData.length}} results for "{{data.search_text}}"</span>
+        <span ng-show="errorMsg" class="error-label">We were unable to complete your search, please enter another tag.</span>
+      </div>
+      <div class="col-md-4 col-xs-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-xs-6 thumb" ng-repeat="item in imageData">
+        <a class="thumbnail" ng-href="{{item.imageLink}}">
+            <img class="img-responsive" ng-src="{{ item.imageUrl }}">
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

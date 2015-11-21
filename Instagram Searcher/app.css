@@ -1,0 +1,37 @@
+.thumb {
+    margin-bottom: 30px;
+}
+
+.thumb.ng-enter {
+  opacity: 1;
+}
+
+.thumb.ng-leave {
+  opacity: 0;
+}
+
+.thumb.ng-enter, .thumb.ng-leave {
+  transition:1s linear all;
+  delay: 1s;
+  opacity: 1;
+}
+
+.loading {
+  position: relative;
+  top: 150px;
+  z-index: 1000;
+  background:rgba(255,255,255,0.9) no-repeat center center;
+}
+
+.tag-label, .error-label {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.error-label {
+  color: #ff0000;
+}
+
+.center-console {
+  text-align: center;
+}
