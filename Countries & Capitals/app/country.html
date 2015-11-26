@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+        <h2>{{ country.countryName }}</h2>
+        <div class="panel panel-info">
+            <div class="panel-heading text-center">
+              <h3 class="panel-title">Details</h3>
+            </div>
+            <dl class="dl-horizontal">
+                <dt>Population of Country: </dt>
+                <dd>{{country.population | number}}</dd>
+
+                <dt class="text-right">Area (km<sup>2</sup>): </dt>
+                <dd>{{country.areaInSqKm | number}}</dd>
+
+                <dt class="text-right">Capital: </dt>
+                <dd>{{country.capital}}</dd>
+
+                <dt>Population of Capital : </dt>
+                <dd>{{capitalPopulation | number}}</dd>
+
+                <dt class="text-right">Continent: </dt>
+                <dd>{{country.continentName}}</dd>
+
+                <dt>{{neighbours.length}} Neighbours: </dt>
+                <dd>
+                    <ul class="list-unstyled" ng-repeat="neighbor in neighbors">
+                        <li><a ng-href="#/countries/{{ neighbor.countryCode | uppercase }}">{{ neighbor.countryName }}</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <img class="img-thumbnail" ng-src="http://www.geonames.org/flags/x/{{country.countryCode | lowercase}}.gif" />
+            </div>
+            <div class="col-sm-6">
+                <img class="img-thumbnail" ng-src="http://www.geonames.org/img/country/250/{{country.countryCode}}.png">
+            </div>
+        </div>
+    </div>
+</div>

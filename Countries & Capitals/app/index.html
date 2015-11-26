@@ -1,0 +1,41 @@
+<html>
+<head>
+  <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="app.css" rel="stylesheet" type="text/css"/>
+
+  <script src="./bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="./bower_components/angular/angular.min.js" type="text/javascript"></script>
+  <script src="./bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+  <script src="./bower_components/angular-animate/angular-animate.min.js" type="text/javascript"></script>
+
+  <script src="app.js" type="text/javascript"></script>
+  <script src="service.js" type="text/javascript"></script>
+  <script src="controller.js" type="text/javascript"></script>
+
+  <title>Countries & Capitals</title>
+</head>
+<body ng-app="ccApp">
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#/">Countries & Capitals</a>
+              </div>
+              <div>
+                <ul class="nav navbar-nav">
+                  <li><a href="#/">Home</a></li>
+                  <li><a href="#/countries">Browse</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="panel-body">
+          <div ng-view class="animate-view" ng-class="{loading: isWaiting}"></div>
+        </div>
+      </div>
+    </div>
+</body>
