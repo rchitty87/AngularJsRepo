@@ -18,7 +18,3 @@ app.run(function($rootScope, $location){
     $location.path('/');
   });
 });
-
-app.controller('mainCtrl', function($scope) {
-
-});
