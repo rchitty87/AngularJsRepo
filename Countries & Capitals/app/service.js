@@ -9,18 +9,18 @@ app.service('cacService', ['$http', '$route', function($http, $route){
     return $http.get(url).then(callback, errback);
   }
 
-  function getCountry() {
-    var url = 'http://api.geonames.org/countryInfoJSON?username=rchitty87&country=' + $route.current.params.countryCode;
+  function getCountry(countryCode) {
+    var url = 'http://api.geonames.org/countryInfoJSON?username=rchitty87&country=' + countryCode;
     return $http.get(url).then(callback, errback);
   }
 
-  function getCapital() {
-    var url = 'http://api.geonames.org/searchJSON?formatted=true&username=rchitty87&q=capital&&style=full&country=' + $route.current.params.countryCode;
+  function getCapital(countryCode) {
+    var url = 'http://api.geonames.org/searchJSON?formatted=true&username=rchitty87&q=capital&&style=full&country=' + countryCode;
     return $http.get(url).then(callback, errback);
   }
 
-  function getNeighbors() {
-    var url = 'http://api.geonames.org/neighboursJSON?username=rchitty87&country=' + $route.current.params.countryCode;
+  function getNeighbors(countryCode) {
+    var url = 'http://api.geonames.org/neighboursJSON?username=rchitty87&country=' + countryCode;
     return $http.get(url).then(callback, errback);
   }
 

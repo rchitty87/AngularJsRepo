@@ -2,8 +2,7 @@ var app = angular.module('ccApp', ['ngAnimate', 'ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider){
   $routeProvider.when('/', {
-    templateUrl: 'home.html',
-    controller: 'HomeCtrl'
+    templateUrl: 'home.html'
   }).when('/countries', {
     templateUrl: 'countries.html',
     controller: 'CountriesCtrl'
