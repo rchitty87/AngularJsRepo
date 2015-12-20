@@ -1,0 +1,4 @@
+<div class="editableContainer">
+<button ng-click="toggleEdit()" ng-class="{edit: !editState, save: editState}">{{buttonText}}</button>
+<div contenteditable="{{editState}}" ng-transclude ng-class="{editable: editState}"></div>
+</div>

@@ -1,0 +1,24 @@
+.editableContainer
+{
+  border: 1px solid black;
+}
+
+.editableContainer button
+{
+  float: right;
+}
+
+.editableContainer .edit
+{
+  background: green;
+}
+
+.editableContainer .save
+{
+  background: red;
+}
+
+.editableContainer .editable
+{
+  background: yellow;
+}

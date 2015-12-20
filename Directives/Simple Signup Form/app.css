@@ -1,0 +1,8 @@
+.brand-logo
+{
+  width: 150px;
+  height: 150px;
+  background: url("./index.png");
+  margin: 10px;
+  float: left;
+}
